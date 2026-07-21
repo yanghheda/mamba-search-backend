@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: mamba-saerch-backend
+  # 默认激活 dev 环境
+  profiles:
+    active: dev
+
+# MyBatis-Plus 通用配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# SpringDoc (Swagger) 通用配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
